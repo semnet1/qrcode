@@ -13,7 +13,7 @@ export class HomePage {
   scanResult = null;
   @ViewChild('video', { static: false }) video: ElementRef;
   @ViewChild('canvas', { static: false }) canvas: ElementRef;
-  @ViewChild('fileinput', { static: false }) fileinput: ElementRef;
+  @ViewChild('fileInput', { static: false }) fileInput: ElementRef;
 
   videoElement: any;
   canvasElement: any;
@@ -42,7 +42,7 @@ export class HomePage {
   }
 
   captureImage() {
-    this.fileinput.nativeElement.click();
+    this.fileInput.nativeElement.click();
   }
 
   handleFile(e) {
@@ -138,6 +138,7 @@ export class HomePage {
 
   reset() {
     this.scanResult = null;
+    this.fileInput.nativeElement.value = '';
   }
 
   async showQrToast() {
